@@ -15,14 +15,16 @@
 <%@include file="all-component/all_css.jsp" %>
 </head>
 <body style="background-color : #f0f1f2;">
-<c:if test="${empty userobj }">
+
+<!--  <c:if test="${empty userobj }">
 <c:redirect url = "login.jsp"/>
-</c:if>
+</c:if> -->
+
 <%@include file="all-component/navbar.jsp" %>
 
 <div class = "container">
 <div class = "row">
-<div class = "col-md-4">
+<div class = "col-md-12">
 <h5 class="text-primary text-center">All Jobs</h5>
 
 <!-- <c:if test="${not empty succMsg }">
@@ -31,16 +33,16 @@
 </c:if> -->
 
 <div class="card">
-<div class = "card-body">
-<form class="form-inline" action="more_view.jsp" method="get">
+     <div class = "card-body">
+              <form class="form-inline" action="more_view.jsp" method="get">
 
-<div class="form-group col-md-5 mt-1">
-<h5>Location</h5>
-</div>
+                   <div class="form-group col-md-5 mt-1">
+                        <h5>Location</h5>
+                   </div>
 
-<div class="form-group col-md-4 mt-1">
-<h5>Category</h5>
-</div>
+                   <div class="form-group col-md-4 mt-1">
+                         <h5>Category</h5>
+                   </div>
 
 <div class="form-group col-md-5">
 <select name="loc" class="custom-select" id="inlineFormCustomSelectPref">
@@ -88,6 +90,7 @@ for(Jobs j : list) {
 <%
 if(j.getDescription().length()>0 && j.getDescription().length()<120) {
 %>
+
 <p><%=j.getDescription() %>.
 </p>
 <%
@@ -124,7 +127,7 @@ class="btn btn-sm bg-success text-white">View More</a>
 
 </div>
 </div>
-</div>
+
 
 <%
 }
@@ -132,6 +135,7 @@ class="btn btn-sm bg-success text-white">View More</a>
 
 </div>
 </div>
+
 
 </body>
 </html>
